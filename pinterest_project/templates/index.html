@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %} Homepage {% endblock %}
+
+
+{% block content %}
+<br>
+
+{% for image in images1 %}
+
+    {% if image.image %}
+      <a href="{% url 'pin_sayfa' pk=image.id %}">
+        <img src="{{ image.image.url }}" width="200" height="200">
+      </a>
+    {% endif %}
+        
+{% endfor %}
+
+{% endblock %}
+

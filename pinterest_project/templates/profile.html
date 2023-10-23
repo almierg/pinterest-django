@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+<br>
+    <div class="kutu4">
+        <center>
+        {% if sayfa.profil_pic %}
+        <img src="{{ sayfa.profil_pic.url }}" class="rounded-circle" width="100" height="90">
+        {% else %}
+            <img  src= "{% static 'images/default-profile-icon-2.jpg' %}"  width="100" height="90"> 
+        {% endif %}
+        </center>
+        <center>
+            <br><br>
+        
+        <h2>{{ sayfa.user }} </h2>   
+             
+        <div class="saydam">
+         {{ sayfa.e_posta }}
+        </div>    
+        {{ sayfa.bio }} <br> 
+       
+        </center>
+        <br>
+        <center>
+            <button type="button" class="btn btn-light oval ">Paylaş</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-light oval ">Mesaj</button>    
+            <button type="button" class="btn btn-danger oval">Takip Et</button>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="dropdown-toggle background-color" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ...
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Engelle</a>
+                <a class="dropdown-item" href="#">Şikayet Et</a>
+            </div></small>
+            <br>
+
+        </center>
+        
+    </div> 
+    <center>   
+    <button type="button" class="btn btn-light fixing ">Oluşturuldu</button>
+    <button type="button" class="btn btn-light fixing ">Kaydedildi</button>
+    </center>
+{% endblock %}

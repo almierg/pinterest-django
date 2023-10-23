@@ -1,0 +1,123 @@
+.kutu{width: 900px;
+  height:650px;
+  margin-right: 450px;
+  margin-left: 300px;
+  background-color:#d1ebcf;
+  border-radius: 40px 40px 40px 40px;
+}
+
+.kutu2{width: 800px;
+  height:645px;
+  margin-right: 400px;
+  margin-left: 30px;
+  background-color:#d1ebcf;
+   
+}
+
+.kutu3{width: 800px;
+  height:645px;
+  margin-right: 400px;
+  margin-left: 30px;
+  background-color:#e4f0e4;
+   
+}
+
+.kutu4{width: 1536px;
+  height:445px;
+ 
+  background-color:#e4f0e4;
+   
+}
+
+.alt{     
+  position:absolute;     
+  bottom:0;     
+     
+  height:100px;     
+  width:100%; 
+}
+
+
+.haber{
+  column-count: 1;
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  background-color: #d1ebcf;
+}
+
+.row{
+  display:flex;
+}
+
+.col-6{
+  width: 50%;
+}
+
+.yukardan{
+  margin-top:25px;
+
+}
+
+.right{
+  float: right;
+  border-radius: 40px 40px 40px 40px;
+}
+
+.oval{
+  border-radius: 40px 40px 40px 40px;
+}
+
+.aşagıya{
+  position:fixed;
+}
+
+.button-container {
+  display: inline-block;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.bildirim{
+  border-radius: 30px 30px 30px 30px;;
+}
+
+.scrollable-div {
+  height: 220px;
+  overflow-y: scroll;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  max-height: 150px; /* Dropdown'ın maksimum yüksekliği */
+  overflow-y: auto; /* Yükseklik sınırları içinde kaydırma çubuğu görüntülenir */
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+.blurred-image {
+  filter: blur(4px);
+}
+
+.saydam {
+  opacity: 0.6;    
+}
+
+.button-color {
+  background-color: #f9f9f9af;
+}
+
+.background-color {
+  color : rgb(11, 2, 2) !important;
+} 
+
+.fixing {
+  border-radius: 20px 20px 20px 20px;
+  
+}

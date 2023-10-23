@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Pin {% endblock %}
+
+{% block content %}
+<br>    
+    <div class="kutu">
+        <div class="kutu2">
+          <div class="row">
+            <div class="col-6">
+            <div class="haber">
+              <div class="yukardan responsive">
+                  {% if resim.image %}
+                    <img  class="oval" src="{{ resim.image.url }}" width="400" height="600">
+                  {% endif %}
+              </div> 
+            </div> 
+          </div> 
+            <div class="col-6">
+            <small><div class="haber2 "><br><br><br>
+              <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ...
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{% url 'indir' pk=resim.id %}">Görüntüyü İndir</a>
+                  <a class="dropdown-item" href="#">Pini Gizle</a>
+                  <a class="dropdown-item" href="#">Pini Şikayet Et</a>
+                  <a class="dropdown-item" href="#">Pin Yerleştirme Kodunu Al</a>
+              </div></small>
+             
+              <h2> {{ resim.title }}</h2>
+              {{ resim.body|safe }}
+              {% if sayfa.profil_pic %}
+                <img src="{{ sayfa.profil_pic.url }}" class="rounded-circle" width="130" height="120">
+              {% else %}
+                  <img  src= "{% static 'images/default-profile-icon-2.jpg' %}" class="oval" width="50" height="30"> 
+              {% endif %}
+              <a href="{% url 'profile' pk=resim.id %}">{{ resim.user }}</a>
+              <button type="button" class="btn btn-light right ">Follow</button>
+              <br><br>
+              <div class="scrollable-div">
+                <h4> Comments </h4>
+                <br><br> 
+                {% if not comments1 %}
+                Henüz yorum yok 
+                {% else %}
+                  {% for x in comments1 %}
+                    <strong>{{ x.name }} - {{ x.date_added }}</strong>
+                    <br>
+                    {{ x.body }}
+                    <br><br> 
+                  {% endfor %} 
+                {% endif %}
+              </div>  
+              <form>
+                <div class="row">
+                  <div class="col alt">
+                    <form method="post" action="{% url 'comment' %}">
+                      {% csrf_token %}
+                      <input type="text" name="comment">
+                      <button type="submit">Yorumu Gönder</button>
+                  </form> 
+                  </div>
+                </div>
+              </form>  
+            </div>  
+          </div>
+        </div>
+      </div>  
+    </div>  
+  
+{% endblock %}
+
+

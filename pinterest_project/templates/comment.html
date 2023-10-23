@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h1>Yorumlar</h1>
+
+
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %} 
+        {{ form.as_p }}
+        <button class="btn btn-secondary"> Add Comment </button>
+    </form>
+</div>
+
+
+{% comment %} <ul>
+    {% for comment in comments %}
+        <li>{{ comment.content }}</li>
+    {% empty %}
+        <li>Henüz yorum yok.</li>
+    {% endfor %}
+</ul> {% endcomment %}
+
+<h2>Yorum Ekle</h2>
+{% comment %} <form method="post" action="{% url 'comment' %}">
+    {% csrf_token %}
+    <input type="text" name="comment">
+    <button type="submit">Yorumu Gönder</button>
+</form> {% endcomment %}
+
+{% endblock %}
